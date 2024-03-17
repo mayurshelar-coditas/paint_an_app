@@ -20,25 +20,37 @@ class StatsContainer extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            StatisticsItem(count: '54.21k', title: 'Followers'),
-            Divider(
-              color: Colors.white,
-              thickness: 20,
-              height: 38.h,
-              indent: 26.w,
-              endIndent: 35.w,
+            const StatisticsItem(count: '54.21k', title: 'Followers'),
+            SizedBox(
+              width: 26.w,
             ),
-            StatisticsItem(count: '2.11k', title: 'Posts'),
-            Divider(
-              color: Colors.white,
+            Container(
+              width: 1.w,
               height: 38.h,
-              thickness: 1,
-              indent: 35.w,
-              endIndent: 27.w,
+              decoration: const BoxDecoration(
+                color: Color(0xFFC1D4F9),
+              ),
             ),
-            StatisticsItem(count: '36.40k', title: 'Followers'),
+            SizedBox(
+              width: 35.w,
+            ),
+            const StatisticsItem(count: '2.11k', title: 'Posts'),
+            SizedBox(
+              width: 35.w,
+            ),
+            Container(
+              width: 1.w,
+              height: 38.h,
+              decoration: const BoxDecoration(
+                color: Color(0xFFC1D4F9) ,
+              ),
+            ),
+            SizedBox(
+              width: 27.w,
+            ),
+            const StatisticsItem(count: '36.40k', title: 'Followers'),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:paint_an_app/models/item_model.dart';
 import 'package:paint_an_app/models/short_item_model.dart';
@@ -11,19 +12,17 @@ class HomeScreen extends StatelessWidget {
     ListModel(
         locationImage: Image.asset(
           'assets/images/Vectormaldives.png',
-          height: 164,
-          width: 231,
         ),
-        userImage: Image.asset('assets/images/Vectoruserimage.png'),
+        userImage: Image.asset(
+          'assets/images/Vectoruserimage.png',
+        ),
         userName: 'Sang Dong-Min',
         date: "Sep 9, 2022",
         locationDescription:
-            "Feel the thrill on the only \nsurf simulator in Maldives 2022"),
+            "Feel the thrill on the only\nsurf simulator in Maldives 2022"),
     ListModel(
         locationImage: Image.asset(
           'assets/images/VectorbridgeImage.png',
-          height: 70,
-          width: 70,
         ),
         userImage: Image.asset('assets/images/Vectoruser2.png'),
         userName: 'Pan Bong',
@@ -45,54 +44,54 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    EdgeInsets padding = MediaQuery.of(context).padding;
-
     DateTime today = DateTime.now();
     String presentDate = DateFormat('EEEE, d MMMM').format(today);
 
     return Padding(
-      padding: padding,
+      padding: EdgeInsets.only(left: 30.w, top: 51.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 31, top: 56),
-            child: Row(
-              children: [
-                Image.asset('assets/images/VectorprofileImage.png',
-                    height: 49, width: 49),
-                //Replace at the end with something of good practice.
-                const SizedBox(width: 16),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Welcome Back!',
-                      style: TextStyle(
-                          fontFamily: 'Gellix',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16),
-                    ),
-                    const SizedBox(
-                      height: 7,
-                    ),
-                    Text(
-                      presentDate,
-                      style: const TextStyle(
-                          fontFamily: 'Gellix',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12),
-                    )
-                  ],
-                )
-              ],
+          Row(
+            children: [
+              Image.asset('assets/images/VectorprofileImage.png',
+                  height: 49.h, width: 49.w),
+              //Replace at the end with something of good practice.
+              SizedBox(width: 16.w),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Welcome Back!',
+                    style: TextStyle(
+                        fontFamily: 'Gellix',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16.sp),
+                  ),
+                  SizedBox(
+                    height: 7.h,
+                  ),
+                  Text(
+                    presentDate,
+                    style: TextStyle(
+                        fontFamily: 'Gellix',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.sp),
+                  )
+                ],
+              )
+            ],
+          ),
+          SizedBox(
+            height: 32.h,
+          ),
+          Container(
+            height: 49.h,
+            width: 315.w,
+            decoration: BoxDecoration(
+              color: const Color(0xFFFFFFFF),
+              borderRadius: BorderRadius.circular(15.r),
             ),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(30, 32, 30, 15),
             child: TextField(
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -102,104 +101,98 @@ class HomeScreen extends StatelessWidget {
                   icon: Image.asset('assets/icons/searchButton.png'),
                   style: IconButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                     ),
-                    backgroundColor: Color(
-                      int.parse('0xFF5474FD'),
-                    ),
+                    backgroundColor: const Color(0xFF5474FD),
                   ),
                 ),
               ),
             ),
           ),
-          const SizedBox(height: 15),
-          const Padding(
-            padding: EdgeInsets.only(left: 30, right: 30),
-            child: Row(
-              children: [
-                Text(
-                  "#Health",
-                  style: TextStyle(
-                    fontFamily: 'Gellix',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
-                  ),
-                ),
-                SizedBox(width: 36),
-                Text(
-                  "#Music",
-                  style: TextStyle(
-                    fontFamily: 'Gellix',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
-                  ),
-                ),
-                SizedBox(width: 37),
-                Text(
-                  "#Technology",
-                  style: TextStyle(
-                    fontFamily: 'Gellix',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
-                  ),
-                ),
-                SizedBox(width: 38),
-                Text(
-                  "#Sports",
-                  style: TextStyle(
-                    fontFamily: 'Gellix',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 30),
           SizedBox(
-            height: 320,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 30),
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => ListItem(
-                  locationDetails[index],
+            height: 15.h,
+          ),
+          Row(
+            children: [
+              Text(
+                "#Health",
+                style: TextStyle(
+                  fontFamily: 'Gellix',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12.sp,
                 ),
-                itemCount: locationDetails.length,
               ),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 30, bottom: 19, right: 30),
-            child: Row(
-              children: [
-                const Text(
-                  "Shorts For You",
-                  style: TextStyle(
-                      fontFamily: 'Gellix',
-                      fontSize: 17,
-                      fontWeight: FontWeight.w700),
+              SizedBox(width: 36.w),
+              Text(
+                "#Music",
+                style: TextStyle(
+                  fontFamily: 'Gellix',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12.sp,
                 ),
-                const Spacer(),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "View All",
-                    style: TextStyle(
-                        color: Color(0xFF5474FD),
-                        fontSize: 12,
-                        fontFamily: 'Gellix',
-                        fontWeight: FontWeight.w500),
-                  ),
-                )
-              ],
+              ),
+              SizedBox(width: 37.w),
+              Text(
+                "#Technology",
+                style: TextStyle(
+                  fontFamily: 'Gellix',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12.sp,
+                ),
+              ),
+              SizedBox(width: 38.sp),
+              Text(
+                "#Sports",
+                style: TextStyle(
+                  fontFamily: 'Gellix',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12.sp,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 30.h),
+          Flexible(
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => ListItem(
+                locationDetails[index],
+              ),
+              itemCount: locationDetails.length,
             ),
           ),
           SizedBox(
-            height: 90,
+            height: 30.h,
+          ),
+          Row(
+            children: [
+              Text(
+                "Shorts For You",
+                style: TextStyle(
+                    fontFamily: 'Gellix',
+                    fontSize: 17.sp,
+                    fontWeight: FontWeight.w700),
+              ),
+              SizedBox(width: 138.w),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  "View All",
+                  style: TextStyle(
+                    color: const Color(0xFF5474FD),
+                    fontSize: 12.sp,
+                    fontFamily: 'Gellix',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 19.h,
+          ),
+          SizedBox(
+            height: 88.h,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => ShortItem(shorts: shorts[index]),

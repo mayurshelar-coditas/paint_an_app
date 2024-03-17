@@ -19,6 +19,7 @@ class PostsWidget extends StatelessWidget {
     return Row(
       children: [
         Card(
+          shadowColor: const Color(0x19202D0D),
           color: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.r),
@@ -42,45 +43,48 @@ class PostsWidget extends StatelessWidget {
                 fontWeight: FontWeight.w300,
               ),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
             Text(
               title,
-              style: const TextStyle(
-                  fontFamily: 'Gellix',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600),
+              style: TextStyle(
+                fontFamily: 'Gellix',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-            const SizedBox(
-              height: 10.4,
+            SizedBox(
+              height: 10.4.h,
             ),
             Row(
               children: [
                 Image.asset('assets/icons/calender.png'),
-                const SizedBox(
-                  width: 7.68,
+                SizedBox(
+                  width: 7.68.w,
                 ),
                 Text(
                   date,
-                  style: const TextStyle(
-                      fontFamily: 'Gellix',
-                      fontSize: 11,
-                      fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                    fontFamily: 'Gellix',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-                const SizedBox(
-                  width: 55.9,
+                SizedBox(
+                  width: 55.9.w,
                 ),
                 Image.asset('assets/icons/clock.png'),
-                const SizedBox(
-                  width: 7.46,
+                SizedBox(
+                  width: 7.46.w,
                 ),
                 Text(
                   time,
-                  style: const TextStyle(
-                      fontFamily: 'Gellix',
-                      fontSize: 11,
-                      fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                    fontFamily: 'Gellix',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ],
             )

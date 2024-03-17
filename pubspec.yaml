@@ -78,7 +78,7 @@ flutter:
   fonts:
     - family: Gellix
       fonts:
-        - asset: assets/fonts/gellix/GellixRegular.otf
+        - asset: assets/fonts/gellix/Gellix-Regular.ttf
         
 
     
