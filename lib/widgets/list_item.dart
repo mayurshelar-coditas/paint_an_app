@@ -11,69 +11,77 @@ class ListItem extends StatelessWidget {
   Widget build(context) {
     return Card(
       color: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Column(
-        children: [
-          locationDetails.locationImage,
-          SizedBox(
-            height: 18.h,
-          ),
-          Text(
-            locationDetails.locationDescription,
-            style: TextStyle(
+      elevation: 0.2,
+      child: Padding(
+        padding: EdgeInsets.all(12.dm),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            locationDetails.locationImage,
+            // width: 231,
+            // fit: BoxFit.cover,
+
+            SizedBox(
+              height: 18.h,
+            ),
+            Text(
+              locationDetails.locationDescription,
+              style: TextStyle(
                 fontFamily: 'Gellix',
                 fontWeight: FontWeight.w600,
-                fontSize: 15.sp),
-          ),
-          SizedBox(height: 16.h),
-          Row(
-            children: [
-              locationDetails.userImage,
-              SizedBox(
-                width: 12.w,
+                fontSize: 14.sp,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    locationDetails.userName,
-                    style: TextStyle(
-                      fontFamily: 'Gellix',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Text(
-                    locationDetails.date,
-                    style: TextStyle(
-                      fontFamily: 'Gellix',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: 61.w,
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Image.asset('assets/icons/Grouparrow.png'),
-                style: IconButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.r),
-                  ),
-                  backgroundColor: const Color(0xFFEFF5F4),
+            ),
+            SizedBox(
+              height: 19.h,
+            ),
+            Row(
+              children: [
+                locationDetails.userImage,
+                SizedBox(
+                  width: 12.w,
                 ),
-              ),
-            ],
-          ),
-        ],
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      locationDetails.userName,
+                      style: TextStyle(
+                        fontFamily: 'Gellix',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 10.sp,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    Text(
+                      locationDetails.date,
+                      style: TextStyle(
+                        fontFamily: 'Gellix',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.sp,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 40.w,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset('assets/icons/Grouparrow.png'),
+                  style: IconButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.r),
+                    ),
+                    backgroundColor: const Color(0xFFEFF5F4),
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

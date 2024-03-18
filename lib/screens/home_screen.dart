@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             "Feel the thrill on the only\nsurf simulator in Maldives 2022"),
     ListModel(
         locationImage: Image.asset(
-          'assets/images/VectorbridgeImage.png',
+          'assets/images/Vectormaldives.png',
         ),
         userImage: Image.asset('assets/images/Vectoruser2.png'),
         userName: 'Pan Bong',
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
     ),
     ShortItemModel(
       displayImage: Image.asset('assets/images/VectortopTrending2.png'),
-      title: "China Trading",
+      title: "China Economic\nTrading",
     )
   ];
 
@@ -152,7 +152,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           SizedBox(height: 30.h),
-          Flexible(
+          Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => ListItem(

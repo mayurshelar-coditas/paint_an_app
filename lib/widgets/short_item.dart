@@ -9,49 +9,33 @@ class ShortItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(
-        right: 20.w,
-        bottom: 24.h,
-      ),
-      height: 88.h,
-      width: 208.w,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15.r),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0x19202D0D),
-            spreadRadius: 0,
-            blurRadius: 24.r,
-          )
-        ],
-      ),
+    return Card(
+      color: Colors.white,
+      elevation: 0.2,
       child: Padding(
-        padding: EdgeInsets.all(9.dg),
+        padding: const EdgeInsets.all(9),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             shorts.displayImage,
-            const SizedBox(
-              width: 13,
+            SizedBox(
+              width: 12.w,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   shorts.title,
-                  style: const TextStyle(
-                      fontFamily: "Gellix",
-                      fontSize: 13,
+                  style: TextStyle(
+                      fontFamily: 'Gellix',
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w600),
                 ),
-                const SizedBox(
-                  height: 9,
+                SizedBox(
+                  height: 9.h,
                 ),
                 Image.asset('assets/images/Group.png'),
               ],
-            ),
+            )
           ],
         ),
       ),

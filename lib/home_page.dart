@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:paint_an_app/screens/home_screen.dart';
 import 'package:paint_an_app/screens/notifications.dart';
+import 'package:paint_an_app/screens/post_screen.dart';
 import 'package:paint_an_app/screens/profile_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,7 +17,7 @@ class HomePageState extends State<HomePage> {
 
   final List<Widget> _screens = [
     HomeScreen(),
-    HomeScreen(),
+    const PostScreen(),
     const Notifications(),
     ProfileScreen(),
   ];
@@ -26,9 +27,8 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color(0xFFFCFCFC),
       body: _screens[_currentIndex],
-      bottomNavigationBar: _currentIndex != 3
-          ? _buildBottomNavigationBar()
-          : null, // Remove bottom navigation bar for ProfileScreen
+      bottomNavigationBar:
+          _currentIndex != 3 ? _buildBottomNavigationBar() : null,
     );
   }
 
