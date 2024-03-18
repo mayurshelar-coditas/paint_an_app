@@ -13,14 +13,11 @@ class ListItem extends StatelessWidget {
       color: Colors.white,
       elevation: 0.2,
       child: Padding(
-        padding: EdgeInsets.all(12.dm),
+        padding: EdgeInsets.only(left: 12.w, right: 12.w, top: 12.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             locationDetails.locationImage,
-            // width: 231,
-            // fit: BoxFit.cover,
-
             SizedBox(
               height: 18.h,
             ),
@@ -33,7 +30,7 @@ class ListItem extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 19.h,
+              height: 15.h,
             ),
             Row(
               children: [
