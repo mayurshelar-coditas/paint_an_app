@@ -37,6 +37,7 @@ class PostScreen extends StatelessWidget {
                       width: 1.w,
                     ),
                   ),
+                  icon: const SizedBox.shrink(),
                   label: Image.asset(
                     'assets/icons/backButtonIcon.png',
                     height: 19.h,
@@ -59,6 +60,7 @@ class PostScreen extends StatelessWidget {
                       width: 1.w,
                     ),
                   ),
+                  icon: const SizedBox.shrink(),
                   label: Image.asset(
                     'assets/icons/bookmarks.png',
                     height: 19.h,
